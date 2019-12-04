@@ -1,0 +1,23 @@
+{
+  "extends": ["tslint:recommended", "tslint-config-prettier"],
+  "rules": {
+    "curly": [true, "as-needed"],
+    "object-literal-sort-keys": [
+      true,
+      "match-declaration-order",
+      "shorthand-first"
+    ],
+    "variable-name": [
+      true,
+      "check-format",
+      "allow-leading-underscore",
+      "allow-pascal-case",
+      "ban-keywords"
+    ],
+    "interface-name": false
+  },
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts", "src/generated/**/*.ts"]
+  }
+}
