@@ -1,0 +1,3 @@
+subscription messageDeleted($messengerId: ID!) {
+  messageDeleted(messengerId: $messengerId)
+}

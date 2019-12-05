@@ -1,0 +1,16 @@
+fragment MessageData on Message {
+  id
+  text
+  respondsTo {
+    id
+    sender {
+      ...UserData
+    }
+    text
+  }
+  isEdited
+  sender {
+    ...UserData
+  }
+  createdAt
+}

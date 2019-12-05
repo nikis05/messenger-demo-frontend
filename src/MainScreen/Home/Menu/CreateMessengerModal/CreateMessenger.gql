@@ -1,0 +1,5 @@
+mutation CreateMessenger($input: MessengerCreateInput!) {
+  createMessenger(input: $input) {
+    ...MessengerBasic
+  }
+}

@@ -1,0 +1,5 @@
+mutation EditMessage($id: ID!, $newText: String!) {
+  editMessage(id: $id, newText: $newText) {
+    ...MessageData
+  }
+}

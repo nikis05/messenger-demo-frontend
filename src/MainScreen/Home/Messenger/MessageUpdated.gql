@@ -1,0 +1,5 @@
+subscription messageEdited($messengerId: ID!) {
+  messageEdited(messengerId: $messengerId) {
+    ...MessageData
+  }
+}

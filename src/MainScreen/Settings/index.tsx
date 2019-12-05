@@ -154,6 +154,7 @@ export const Settings: React.FC = () => {
             onOk: () => deleteAccount()
           })
         }
+        loading={deleteAccountResult.loading}
       >
         Delete account
       </Button>

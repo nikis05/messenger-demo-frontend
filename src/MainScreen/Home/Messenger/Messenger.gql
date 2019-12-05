@@ -1,0 +1,11 @@
+query Messenger($id: ID!, $around: ID) {
+  self {
+    id
+  }
+  messenger(id: $id) {
+    id
+    messages(where: { around: $around }) {
+      ...MessageData
+    }
+  }
+}

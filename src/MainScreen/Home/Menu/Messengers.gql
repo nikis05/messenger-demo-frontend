@@ -1,0 +1,5 @@
+query Messengers {
+  messengers {
+    ...MessengerBasic
+  }
+}

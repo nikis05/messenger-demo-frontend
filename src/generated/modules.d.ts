@@ -35,6 +35,141 @@ declare module '*/LogOut.gql' {
 }
     
 
+declare module '*/CreateMessenger.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const CreateMessenger: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/User.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const User: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/Messengers.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const Messengers: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/UserInvitedToMessenger.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const UserInvitedToMessenger: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/DeleteMessage.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const DeleteMessage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MessageData.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const MessageData: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/ViewerId.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const ViewerId: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MessageDeleted.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const messageDeleted: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MessagePosted.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const MessagePosted: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MessageUpdated.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const messageEdited: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/Messenger.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const Messenger: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MoreMessages.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const MoreMessages: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/PostMessage.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const PostMessage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/UpdateMessage.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const EditMessage: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/MessengerBasic.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const MessengerBasic: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
 declare module '*/Self.gql' {
   import { DocumentNode } from 'graphql';
   const defaultDocument: DocumentNode;

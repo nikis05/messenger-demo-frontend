@@ -1,0 +1,8 @@
+query MoreMessages($id: ID!, $before: DateTime, $after: DateTime) {
+  messenger(id: $id) {
+    id
+    messages(where: { before: $before, after: $after }) {
+      ...MessageData
+    }
+  }
+}

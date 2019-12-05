@@ -1,0 +1,5 @@
+mutation PostMessage($messengerId: ID!, $input: MessageCreateInput!) {
+  postMessage(messengerId: $messengerId, input: $input) {
+    id
+  }
+}
