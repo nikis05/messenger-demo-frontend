@@ -1,10 +1,11 @@
 import { useSignUpMutation } from '@api';
 import { Button, Form } from 'antd';
+import { useAuth } from 'auth';
+import { handleErrors } from 'AuthScreen/common/handleErrors';
 import { Input } from 'AuthScreen/common/Input';
 import { Link } from 'AuthScreen/common/Link';
 import { Panel } from 'AuthScreen/common/Panel';
 import React, { useState } from 'react';
-import { handleErrors } from 'AuthScreen/common/handleErrors';
 
 export const SignUpPanel: React.FC = () => {
   const [{ login, password }, setFormData] = useState({
@@ -12,8 +13,11 @@ export const SignUpPanel: React.FC = () => {
     password: ''
   });
 
+  const [, { setAuthorized }] = useAuth();
+
   const [mutate, { loading, error }] = useSignUpMutation({
-    variables: { input: { login, password } }
+    variables: { input: { login, password } },
+    onCompleted: data => setAuthorized(data.signUp)
   });
 
   const getError = handleErrors(['A user with this login already exists'])(

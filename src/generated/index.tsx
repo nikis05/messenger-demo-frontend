@@ -262,10 +262,32 @@ export type BothTokensFragment = (
   & Pick<Tokens, 'accessToken' | 'refreshToken'>
 );
 
+export type SelfQueryVariables = {};
+
+
+export type SelfQuery = (
+  { readonly __typename: 'Query' }
+  & { readonly self: (
+    { readonly __typename: 'User' }
+    & UserDataFragment
+  ) }
+);
+
+export type UserDataFragment = (
+  { readonly __typename: 'User' }
+  & Pick<User, 'id' | 'login'>
+);
+
 export const BothTokensFragmentDoc = gql`
     fragment BothTokens on Tokens {
   accessToken
   refreshToken
+}
+    `;
+export const UserDataFragmentDoc = gql`
+    fragment UserData on User {
+  id
+  login
 }
     `;
 export const LogInDocument = gql`
@@ -331,3 +353,35 @@ export function useSignUpMutation(baseOptions?: ApolloReactHooks.MutationHookOpt
 export type SignUpMutationHookResult = ReturnType<typeof useSignUpMutation>;
 export type SignUpMutationResult = ApolloReactCommon.MutationResult<SignUpMutation>;
 export type SignUpMutationOptions = ApolloReactCommon.BaseMutationOptions<SignUpMutation, SignUpMutationVariables>;
+export const SelfDocument = gql`
+    query Self {
+  self {
+    ...UserData
+  }
+}
+    ${UserDataFragmentDoc}`;
+
+/**
+ * __useSelfQuery__
+ *
+ * To run a query within a React component, call `useSelfQuery` and pass it any options that fit your needs.
+ * When your component renders, `useSelfQuery` returns an object from Apollo Client that contains loading, error, and data properties 
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useSelfQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useSelfQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<SelfQuery, SelfQueryVariables>) {
+        return ApolloReactHooks.useQuery<SelfQuery, SelfQueryVariables>(SelfDocument, baseOptions);
+      }
+export function useSelfLazyQuery(baseOptions?: ApolloReactHooks.LazyQueryHookOptions<SelfQuery, SelfQueryVariables>) {
+          return ApolloReactHooks.useLazyQuery<SelfQuery, SelfQueryVariables>(SelfDocument, baseOptions);
+        }
+export type SelfQueryHookResult = ReturnType<typeof useSelfQuery>;
+export type SelfLazyQueryHookResult = ReturnType<typeof useSelfLazyQuery>;
+export type SelfQueryResult = ApolloReactCommon.QueryResult<SelfQuery, SelfQueryVariables>;

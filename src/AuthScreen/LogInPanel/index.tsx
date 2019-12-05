@@ -1,18 +1,25 @@
+import { useLogInMutation } from '@api';
 import { Button, Form } from 'antd';
+import { useAuth } from 'auth';
+import { handleErrors } from 'AuthScreen/common/handleErrors';
 import { Input } from 'AuthScreen/common/Input';
 import { Link } from 'AuthScreen/common/Link';
 import { Panel } from 'AuthScreen/common/Panel';
 import React, { useState } from 'react';
-import { useLogInMutation } from '@api';
-import { handleErrors } from 'AuthScreen/common/handleErrors';
 
 export const LoginPanel: React.FC = () => {
   const [{ login, password }, setFormData] = useState({
     login: '',
     password: ''
   });
+
+  const [, { setAuthorized }] = useAuth();
+
   const [mutate, { error, loading }] = useLogInMutation({
-    variables: { login, password }
+    variables: { login, password },
+    onCompleted: data => {
+      setAuthorized(data.logIn);
+    }
   });
 
   const getError = handleErrors([

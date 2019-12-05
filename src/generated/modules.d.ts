@@ -25,3 +25,21 @@ declare module '*/Tokens.gql' {
   export default defaultDocument;
 }
     
+
+declare module '*/Self.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const Self: DocumentNode;
+
+  export default defaultDocument;
+}
+    
+
+declare module '*/UserData.gql' {
+  import { DocumentNode } from 'graphql';
+  const defaultDocument: DocumentNode;
+  export const UserData: DocumentNode;
+
+  export default defaultDocument;
+}
+    
