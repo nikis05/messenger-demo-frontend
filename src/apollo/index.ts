@@ -4,7 +4,7 @@ import { setContext } from 'apollo-link-context';
 import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities';
 import { getTokens } from 'auth';
-import { refreshLink } from 'refreshLink';
+import { refreshLink } from './refreshLink';
 
 const batchHttpLink = new BatchHttpLink({
   uri: process.env.REACT_APP_HTTP_ENDPOINT!

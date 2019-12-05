@@ -45,9 +45,6 @@ export const refreshLink = onError(({ graphQLErrors, operation, forward }) => {
       error =>
         error.message === 'Context creation failed: Token refresh required'
     )
-  ) {
-    // console.log("Auto refreshing the token")
-
+  )
     return fromPromise(refreshAccessTokenAndRetry(operation, forward));
-  }
 });

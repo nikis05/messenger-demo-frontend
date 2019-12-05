@@ -1,8 +1,18 @@
+import { Layout } from 'antd';
 import React from 'react';
-import { useSelfQuery } from '@api';
+import { Route, Switch } from 'react-router-dom';
+import { Header } from './Header';
+import { Home } from './Home';
+import { Settings } from './Settings';
 
 export const MainScreen: React.FC = () => {
-  const { data } = useSelfQuery();
-  if (!data) return null;
-  return <span>{data.self.login}</span>;
+  return (
+    <Layout style={{ height: '100vh' }}>
+      <Header />
+      <Switch>
+        <Route path="/settings" component={Settings} />
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Layout>
+  );
 };
