@@ -3,11 +3,15 @@ schema: 'http://localhost:2210/graphql'
 documents: './src/**/*.gql'
 generates:
   src/generated/index.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
     config:
       noNamespaces: true
       reactApolloVersion: 3
       withHooks: true
-      withHoc: false
+      withHOC: false
       withComponent: false
       withMutationFn: false
       strict: true
@@ -16,13 +20,6 @@ generates:
         object: true
         inputValue: false
       immutableTypes: true
-    plugins:
-      - 'typescript'
-      - 'typescript-operations'
-      - 'typescript-react-apollo'
   src/generated/modules.d.ts:
     plugins:
       - 'typescript-graphql-files-modules'
-  src/generated/fragment-types.json:
-    plugins:
-      - 'fragment-matcher'

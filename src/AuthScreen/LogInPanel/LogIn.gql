@@ -1,0 +1,5 @@
+mutation LogIn($login: String!, $password: String!) {
+  logIn(login: $login, password: $password) {
+    ...BothTokens
+  }
+}

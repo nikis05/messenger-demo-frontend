@@ -14,7 +14,10 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "paths": {
+      "@api": ["generated"]
+    }
   },
   "include": ["src"]
 }
